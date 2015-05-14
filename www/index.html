@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+     <!-- your app's js -->
+    <script src="js/app.js"></script>
+  <!--  <script src="js/controllers.js"></script>
+    <script src="js/services.js"></script>-->
+
+  </head>
+  <body ng-app="starter" ng-controller="MainCtrl">
+
+<!--     <ion-pane>
+      <ion-header-bar class="bar-stable">
+        <h1 class="title">Ionic Blank Starter</h1>
+       </ion-header-bar>
+      <label>Name</label>
+      <input type="text" id="name" value="name" ng-model="myForm.name" ng-minlength="5" ng-maxlength="12"> Name <br/>
+
+      The weather outside is {{conditions}} {{myForm.name}} 
+      <ion-content>
+      </ion-content> -->
+
+       <ion-view view-title="Event Check-in">
+        <ion-content>
+          <form class="list" ng-show="showForm">
+            <br/>
+            <div class="item item-divider">
+              My Spot Information
+            </div>
+            <div class="item item-divider">
+              Spot Address
+            </div>
+            <label class="item item-input">
+              <input type="text" placeholder="Address Line 1" ng-model="RentMySpotForm.address1">
+            </label>
+            <label class="item item-input">
+              <input type="text" placeholder="Address Line 2" ng-model="RentMySpotForm.address2">
+            </label>
+            <label class="item item-input">
+              <input type="text" placeholder="City" ng-model="RentMySpotForm.city">
+            </label>
+            <label class="item item-input">
+              <input type="text" placeholder="State" ng-model="RentMySpotForm.state">
+            </label>
+            <label class="item item-input">
+              <input type="text" placeholder="Zip" ng-model="RentMySpotForm.zip">
+            </label>
+          <div class="item item-divider">
+              Spot Information
+            </div>
+            <label class="item item-input">
+              <input type="text" placeholder="Spot Type" ng-model="RentMySpotForm.spotType">
+            </label>
+            <label class="item item-input">
+              <input type="text" placeholder="Rate per Hr" ng-model="RentMySpotForm.rateHr">
+            </label>
+            <label class="item item-input">
+              <input type="text" placeholder="Rate Monthly" ng-model="RentMySpotForm.rateMonthly">
+            </label>
+            <label class="item item-input">
+              <input type="text" placeholder="Description" ng-model="RentMySpotForm.description">
+            </label>
+            <label class="item item-input">
+              <input type="text" placeholder="Car Size" ng-model="RentMySpotForm.carSize">
+            </label>
+            <!-- <div class="item item-divider">
+              Shirt Size
+            </div>
+            <ion-radio ng-repeat="shirtSize in shirtSizes"
+                       ng-value="shirtSize.value"
+                       ng-model="RentMySpotForm.shirtSize">
+              {{ shirtSize.text }}
+            </ion-radio>
+            <div class="item item-divider">
+              Lunch
+            </div>
+            <ion-toggle ng-model="RentMySpotForm.vegetarian">
+              Vegetarian
+            </ion-toggle> -->
+            <div class="padding">
+              <button class="button black button-block" ng-click="submit()">Submit</button>
+            </div>
+          </form>
+
+          <div ng-hide="showForm">
+            <pre ng-bind="RentMySpotForm | json"></pre> 
+            <a href="#/event/RentMySpotForms">View RentMySpotForms</a>
+          </div>
+        </ion-content>
+      </ion-view>
+
+
+  </body>
+</html>
